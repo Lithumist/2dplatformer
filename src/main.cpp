@@ -14,6 +14,10 @@ int main ()
     platSpriteSheet Sheet;
     Sheet.setup( "assets/tiles.png", 32, 32 );
 
+    // test animatinos
+    platAnimation Anim( 5, sf::seconds( 0.5 ) );
+    Anim.start();
+
     while ( Window.isOpen() )
     {
         sf::Event Event;
@@ -32,11 +36,7 @@ int main ()
         } // event loop
 
         Window.clear();
-        Sheet.draw( 0 , sf::Vector2f( 0, 20 ), &Window );
-        Sheet.draw( 10 , sf::Vector2f( 32, 20 ), &Window );
-        Sheet.draw( 2 , sf::Vector2f( 64, 20 ), &Window );
-        Sheet.draw( 9 , sf::Vector2f( 96, 20 ), &Window );
-        Sheet.draw( 4, sf::Vector2f( 128, 20 ), &Window );
+        Sheet.draw( Anim.frame() , sf::Vector2f( 0, 20 ), &Window );
         Window.display();
 
     } // game loop

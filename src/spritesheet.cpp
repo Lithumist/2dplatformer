@@ -43,7 +43,7 @@ void platSpriteSheet::draw ( int argIndex, sf::Vector2f argPos, sf::RenderWindow
     // calculate top left coordinates of sprite within spritesheet
     int X, Y;
     Y = SpriteHeight  * ( argIndex / SpritesHor );
-    X = SpriteWidth   * ( argIndex - ( (Y/SpriteHeight) * SpritesHor ) );
+    X = SpriteWidth   * ( argIndex - ( ( Y/SpriteHeight ) * SpritesHor ) );
 
     // generate the sprite
     sf::Sprite sprSprite  ( txSheet, sf::IntRect( X, Y, SpriteWidth, SpriteHeight ) );
