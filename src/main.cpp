@@ -1,8 +1,7 @@
 // see license.txt
 
-#include <iostream>
+#include <SFML/Graphics.hpp>
 
 int main () {
-    std::cout << "2D Platformer!\n";
     return 0;
 }
