@@ -1,0 +1,10 @@
+# directories
+platformer/Debug
+platformer/Release
+
+# random files
+platformer/platformer.opensdf
+platformer/platformer.sdf
+
+# file types
+*.v11.suo
