@@ -5,22 +5,27 @@
 #include "header/log.h"
 #include "header/animation.h"
 
-int main () {
-    log( "Tesing Animation!", LOG_INFO|LOG_DEBUG );
+int main ()
+{
+    sf::RenderWindow Window( sf::VideoMode(640, 480), "2D Platformer", sf::Style::Titlebar );
 
-    platAnimation MyAnim( 10, sf::seconds(1) );
-    MyAnim.start();
+    while ( Window.isOpen() )
+    {
+        sf::Event Event;
+        while ( Window.pollEvent( Event ) ) {
 
-    sf::Clock MyClock;
-    MyClock.restart();
+            if ( Event.type == sf::Event::KeyPressed ) {
+                if ( Event.key.code == sf::Keyboard::Escape ) {
+                    Window.close();
+                }
+            }
 
-    while ( 1 ) {
-        if ( MyClock.getElapsedTime().asSeconds() >= 0.5 ) {
-            MyClock.restart();
-            log( std::to_string(MyAnim.frame()) );
-        }
-    }
+            if ( Event.type == sf::Event::Closed ) {
+                Window.close();
+            }
 
-    system("Pause");
+        } // event loop
+    } // game loop
+
     return 0;
-}
+} // main function
