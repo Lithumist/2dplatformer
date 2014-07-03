@@ -8,3 +8,4 @@ rmdir /s /q "platformer/Release/assets"
 :: copy new assets
 xcopy "assets" "platformer/Debug" /s /e /v
 xcopy "assets" "platformer/Release" /s /e /v
+xcopy "assets" "platformer" /s /e /v
