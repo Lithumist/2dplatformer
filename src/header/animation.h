@@ -2,6 +2,9 @@
 // animation.h
 // declares a class for handling the timing for frame by frame animation
 
+#ifndef ANIMATION_H
+#define ANIMATION_H
+
 #include <SFML/System.hpp>
 
 class platAnimation
@@ -23,3 +26,5 @@ class platAnimation
         sf::Clock FrameClock;
         int Frame;
 };
+
+#endif

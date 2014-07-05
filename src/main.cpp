@@ -9,6 +9,13 @@
 int main ()
 {
     sf::RenderWindow Window( sf::VideoMode(640, 480), "2D Platformer", sf::Style::Titlebar );
+    Window.setFramerateLimit( 60 );
+
+    // create view for zoomed in retro look
+    sf::View vZoom;
+    vZoom.setSize( sf::Vector2f( 320, 240 ) );
+    vZoom.setCenter( sf::Vector2f( 160, 120 ) );
+    Window.setView( vZoom );
 
     // test spritesheets
     platSpriteSheet Sheet;
@@ -36,7 +43,7 @@ int main ()
         } // event loop
 
         Window.clear();
-        Sheet.draw( Anim.frame() , sf::Vector2f( 0, 20 ), &Window );
+        Sheet.draw( Anim.frame() , sf::Vector2f( 0, 0 ), &Window );
         Window.display();
 
     } // game loop

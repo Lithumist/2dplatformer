@@ -2,6 +2,9 @@
 // spritesheet.h
 // declares class to load and render sprites from a spritesheet
 
+#ifndef SPRITESHEET_H
+#define SPRITESHEET_H
+
 #include <SFML/Graphics.hpp>
 #include <string>
 
@@ -20,3 +23,5 @@ class platSpriteSheet
         int SpritesHor, SpritesVer;
         bool flagReady;
 };
+
+#endif
